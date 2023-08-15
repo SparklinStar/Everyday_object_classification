@@ -5,6 +5,7 @@ import tensorflow as tf
 from tensorflow.keras.applications.efficientnet import preprocess_input
 import style
 
+
 page_bg_img = style.stylespy()  # used for styling the page
 
 # Appname
@@ -39,16 +40,16 @@ def main():
         image = preprocess_input(image)
 
         # Make predictions
-    predictions = model.predict(np.expand_dims(image, axis=0))
+        predictions = model.predict(np.expand_dims(image, axis=0))
     
-    if np.isnan(predictions).any():
-        st.write("Prediction result is NaN. Please try with another image")
-    else:
-        predicted_class = np.argmax(predictions)
-        confidence = predictions[0][predicted_class]
+        if np.isnan(predictions).any():
+         st.write("Prediction result is NaN. Please try with another image")
+        else:
+         predicted_class = np.argmax(predictions)
+         confidence = predictions[0][predicted_class]
 
-        st.write(f"Predicted class: {class_names[predicted_class]}")
-        st.write(f"Confidence: {confidence:.2f}")
+         st.write(f"Predicted class: {class_names[predicted_class]}")
+         st.write(f"Confidence: {confidence:.2f}")
 
     items = [
     'dog', 'rat', 'caterpillar', 'cow', 'cockroach', 'cat', 'Van',
