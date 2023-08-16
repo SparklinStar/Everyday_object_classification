@@ -41,6 +41,13 @@ The model classifies the following labels:
 - Model evaluation with accuracy, F1 score, classification report, and confusion matrix
 - Streamlit deployment for user-friendly interaction
 
+### Why have I used EfficientNetB2 instead of other EfficientNet models?
+- Trade-off between Performance and Complexity: EfficientNet models are designed with a balance between performance and model complexity. EfficientNet B2 strikes a suitable equilibrium, providing a strong performance boost while still maintaining a manageable computational load compared to larger variants like B3 or B4
+- Faster Training and Inference: EfficientNet B2 is faster to train and provides faster inference compared to larger versions like B3 or B4. This efficiency is crucial when developing and iterating on your model during the development process.
+- Suitable for Streamlit Deployment: EfficientNet B2's resource efficiency and manageable size make it an excellent fit for deployment on platforms like Streamlit, where model performance and user experience are both key considerations.
+- Model Complexity and Resources: EfficientNet B5, B6, and B7 are larger and more complex models with significantly more parameters than B2. Training and deploying these larger models require substantially more computational resources and memory, which might not be practical for your specific deployment environment or project constraints.
+- Dataset Complexity: If the dataset primarily consists of common everyday objects, using a model like B2 might be sufficient to capture the necessary features for accurate classification. The additional complexity of B5, B6, or B7 might not necessarily yield significant benefits for your specific task.
+
 ## How to Use
 
 1. Clone the repository: `git clone https://github.com/yourusername/everyday-object-classifier.git`
